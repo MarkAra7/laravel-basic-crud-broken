@@ -7,16 +7,19 @@ use App\Models\Comment;
 
 class CommentController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         $comments = Comment::all();
-        return view('comments.index');
+        return view('comments.index', ['comments' => $comments]);
     }
 
-    public function create() {
+    public function create()
+    {
         return "this has to return create form view";
     }
 
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
         Comment::create([
             'content' => $request["content"]
         ]);
