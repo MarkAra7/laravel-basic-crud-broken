@@ -24,7 +24,7 @@ class CommentController extends Controller
             'content' => $request["content"]
         ]);
 
-        return redirect('/comments/list');
+        return redirect('/comments');
     }
 
     // delete functionality has to be implemented
