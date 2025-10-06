@@ -3,6 +3,11 @@
 
 <ul>
     <li>{{$comment->content}}</li>
+    <form action="{{ route('comment.destroy', $comment->id) }}" method="POST">
+        @csrf
+        @method("DELETE")
+        <button type="submit" class="btn-danger">Delete</button>
+    </form>
 </ul>
 @endforeach
 

@@ -17,7 +17,7 @@ Route::get('/', function () {
 //     $name = "Renārs";
 //     echo $name;
 // });
-Route::get('/test', function (){
+Route::get('/test', function () {
     return view('test', ['variable' => "my variable text value"]);
 });
 
@@ -25,3 +25,4 @@ Route::get('/test', function (){
 Route::get('/comments', [CommentController::class, 'index']);
 Route::get('/comments/create', [CommentController::class, 'create']);
 Route::post('/comments', [CommentController::class, 'store']);
+Route::delete('/comments/delete/{id}', [CommentController::class, 'destroy'])->name('comment.destroy');
